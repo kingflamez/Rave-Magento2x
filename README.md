@@ -22,7 +22,7 @@ A magento module that allows you to accept payment on Magento 2x
 
 ### Composer
 
-Coming Soon.
+* composer require kingflamez/rave-magento2
 
 
 ### Manual Installation
@@ -31,7 +31,8 @@ Coming Soon.
 *  Unpack(Extract) the archive.
 *  Create a __Rave/Payments__ folder in your Magento's __app/code__ directory.
 *  Copy the content into your Magento's __app/code/Rave/Payments__ directory.
-*  Enable the Rave Payments module:
+
+### Enable the Rave Payments module:
    From your commandline, in your magento root directory, run
    ```php bin/magento module:enable Rave_Payments --clear-static-content && php bin/magento setup:upgrade```
 
