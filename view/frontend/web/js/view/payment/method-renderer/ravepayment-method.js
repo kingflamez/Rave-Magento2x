@@ -81,7 +81,7 @@ define([
           tx_ref: 'MAGE_'+Math.floor((Math.random() * 1000000000) + 1),
           amount: quote.totals().grand_total,
           currency: checkoutConfig.totalsData.quote_currency_code,
-          country: aveConfiguration.country,
+          country: raveConfiguration.country,
           payment_options: raveConfiguration.payment_method,
           meta: {
             QuoteId: quoteId,
