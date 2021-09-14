@@ -99,23 +99,15 @@ define([
             var txref = data.tx_ref; // collect flwRef returned and pass to a 					server page to complete status check.
             if (data.status == "successful" ) {
               // redirect to a success page
-              $.get(raveConfiguration.api_url+ "transactions/"+ data.id +"/verify",
-              function(data, status){
-                var chargestatus = data.data.status;
-                var chargeAmount = data.data.amount;
-                var chargeCurrency = data.data.currency;
+                var chargestatus = data.status;
+                var chargeAmount = data.amount;
+                var chargeCurrency = data.currency;
 
                 if ((chargestatus == 'successful') && (chargeAmount >= quote.totals().grand_total)  && (chargeCurrency == checkoutConfig.totalsData.quote_currency_code)) {
                   //Give Value and return to Success page
                   redirectOnSuccessAction.execute();
                   return;
-                } else {
-                  _this.isPlaceOrderActionAllowed(true);
-                  _this.messageContainer.addErrorMessage({
-                    message: "Error, please try again"
-                  });
                 }
-              });
             }else {
               _this.isPlaceOrderActionAllowed(true);
               _this.messageContainer.addErrorMessage({
