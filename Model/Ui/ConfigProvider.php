@@ -46,7 +46,7 @@ final class ConfigProvider implements ConfigProviderInterface
   {
     $public_key = $this->scopeConfig->getValue('payment/rave/live_public_key', $this->scopeStore);
         $secret_key = $this->scopeConfig->getValue('payment/rave/live_secret_key', $this->scopeStore);
-        $api_url = 'https://api.ravepay.co/';
+        $api_url = 'https://api.flutterwave.com/v3/';
         $modal_title = $this->scopeConfig->getValue('payment/rave/modal_title', $this->scopeStore);
         $modal_desc = $this->scopeConfig->getValue('payment/rave/modal_desc', $this->scopeStore);
         $logo = $this->scopeConfig->getValue('payment/rave/logo', $this->scopeStore);
@@ -55,7 +55,7 @@ final class ConfigProvider implements ConfigProviderInterface
         if ($this->scopeConfig->getValue('payment/rave/test_mode', $this->scopeStore)) {
             $public_key = $this->scopeConfig->getValue('payment/rave/test_public_key', $this->scopeStore);
             $secret_key = $this->scopeConfig->getValue('payment/rave/test_secret_key', $this->scopeStore);
-            $api_url = 'https://ravesandboxapi.flutterwave.com/';
+            $api_url = 'https://api.flutterwave.com/v3/';
         }
 
         return [
